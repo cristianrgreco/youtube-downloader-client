@@ -1,0 +1,12 @@
+html {
+  font-size: 30px;
+}
+
+body {
+  margin: 2rem;
+  padding: 0;
+}
+
+body, input, button {
+  font-family: 'Roboto', sans-serif;
+}
