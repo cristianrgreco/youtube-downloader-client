@@ -17,11 +17,11 @@ const StyledButton = styled.button`
   transition: background-color ${props => props.theme.transitionSpeed};
   
   &:hover {
-    background-color: ${props => darken(.02, props.theme.colours.white)};  
+    background-color: ${props => darken(.01, props.theme.colours.white)};  
   }
 
   &:active {
-    background-color: ${props => darken(.04, props.theme.colours.white)};  
+    background-color: ${props => darken(.02, props.theme.colours.white)};  
   }
   
   &:not(.first) {
