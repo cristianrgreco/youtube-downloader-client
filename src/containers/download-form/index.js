@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import classNames from 'classnames'
 import {connect} from 'react-redux'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
 import {
   Input,
@@ -37,8 +37,8 @@ const DownloadForm = ({url, setUrl, type, setType, download}) => (
         selectedValue={type}
         onChange={value => setType(value)}
         entries={[
-          {label: <i className={classNames('fa', 'fa-fw', 'fa-video')} />, value: 'VIDEO'},
-          {label: <i className={classNames('fa', 'fa-fw', 'fa-music')} />, value: 'AUDIO'}
+          {label: <FontAwesomeIcon icon={["fas", "video"]} fixedWidth />, value: 'VIDEO'},
+          {label: <FontAwesomeIcon icon={["fas", "music"]} fixedWidth />, value: 'AUDIO'}
         ]}
       />
     </StyledRadioGroup>
