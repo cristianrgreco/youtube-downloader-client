@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../components/logo'
 import DownloadForm from './download-form'
+import {Logo} from '../components'
 
 const StyledLogo = styled.div`
   margin-bottom: 2rem;

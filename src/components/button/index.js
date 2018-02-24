@@ -4,7 +4,7 @@ import {lighten, darken} from 'polished'
 
 const StyledButton = styled.button`
   outline: none;
-  color: white;
+  color: ${props => props.theme.colours.white};
   cursor: pointer;
   font-size: 1rem;
   padding: .25rem .5rem;

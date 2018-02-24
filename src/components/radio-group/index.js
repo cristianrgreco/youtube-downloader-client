@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import classNames from 'classnames'
-import {lighten} from 'polished'
+import {lighten, darken} from 'polished'
 
 const StyledContainer = styled.div`
   display: flex;
@@ -12,16 +12,16 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   padding: .25rem .5rem;
-  border: 1px solid ${props => lighten(.5, props.theme.colours.black)};
-  background-color: white;
+  border: 1px solid ${props => props.theme.colours.grey};
+  background-color: ${props => props.theme.colours.white};
   transition: background-color ${props => props.theme.transitionSpeed};
   
   &:hover {
-    background-color: ${props => lighten(.79, props.theme.colours.black)};  
+    background-color: ${props => darken(.02, props.theme.colours.white)};  
   }
 
   &:active {
-    background-color: ${props => lighten(.75, props.theme.colours.black)};  
+    background-color: ${props => darken(.04, props.theme.colours.white)};  
   }
   
   &:not(.first) {
@@ -46,7 +46,7 @@ const StyledLabel = styled.label`
 
 const StyledSpan = styled.span`
   cursor: pointer;
-  color: ${props => lighten(.4, props.theme.colours.red)};
+  color: ${props => lighten(.45, props.theme.colours.red)};
   transition: color ${props => props.theme.transitionSpeed};
 `
 

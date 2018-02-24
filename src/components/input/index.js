@@ -8,17 +8,17 @@ const StyledInput = styled.input`
   font-size: 1rem;
   padding: .25rem .5rem;
   border-radius: ${props => props.theme.borderRadius};
-  border: 1px solid ${props => lighten(.5, props.theme.colours.black)};
+  border: 1px solid ${props => props.theme.colours.grey};
   transition: border ${props => props.theme.transitionSpeed};
  
   &::placeholder {
-    color: ${props => lighten(.5, props.theme.colours.black)};
+    color: ${props => props.theme.colours.grey};
     transition: color ${props => props.theme.transitionSpeed}
   } 
   
   &:focus {
     &::placeholder {
-      color: ${props => lighten(.75, props.theme.colours.black)};
+      color: ${props => lighten(.25, props.theme.colours.grey)};
     }
   }
 `

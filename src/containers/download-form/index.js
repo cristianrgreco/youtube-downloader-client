@@ -2,9 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import classNames from 'classnames'
 import {connect} from 'react-redux'
-import Input from '../../components/input'
-import Button from '../../components/button'
-import RadioGroup from '../../components/radio-group'
+
+import {
+  Input,
+  Button,
+  RadioGroup
+} from '../../components'
 
 import {
   setUrl,
