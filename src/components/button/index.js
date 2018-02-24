@@ -8,9 +8,9 @@ const StyledButton = styled.button`
   font-size: 1rem;
   padding: .25rem .5rem;
   border-radius: ${props => props.theme.borderRadius};
-  border: 1px solid ${props => lighten(.1, props.theme.colours.red)};
+  border: 1px solid ${props => props.theme.colours.red};
   color: ${props => props.theme.colours.white};
-  background-color: ${props => lighten(.1, props.theme.colours.red)};
+  background-color: ${props => props.theme.colours.red};
   transition: border, background-color ${props => props.theme.transitionSpeed};
   
   ${props => props.small && css`
@@ -20,8 +20,8 @@ const StyledButton = styled.button`
   `}
 
   &:hover {
-    border: 1px solid ${props => props.theme.colours.red};
-    background-color: ${props => props.theme.colours.red};  
+    border: 1px solid ${props => darken(.05, props.theme.colours.red)};
+    background-color: ${props => darken(.05, props.theme.colours.red)};  
   }
   
   &:active {
