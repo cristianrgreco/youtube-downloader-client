@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import classNames from 'classnames'
 import {connect} from 'react-redux'
 import Input from '../../components/input'
 import Button from '../../components/button'
+import RadioGroup from '../../components/radio-group'
 
 import {
   setUrl,
+  setType,
   download
 } from '../../actions/download-form'
 
@@ -14,20 +17,28 @@ const StyledContainer = styled.div`
   flex-direction: row;
 `
 
-const StyledInput = styled.div`
-  margin-right: .25rem;
+const StyledRadioGroup = styled.div`
+  margin: auto .25rem;
 `
 
-const DownloadForm = ({url, setUrl, type, download}) => (
+const DownloadForm = ({url, setUrl, type, setType, download}) => (
   <StyledContainer>
-    <StyledInput>
-      <Input
-        type="text"
-        value={url}
-        placeholder="https://www.youtube.com/watch?v=VIDEO-CODE"
-        onChange={e => setUrl(e.target.value)}
+    <Input
+      type="text"
+      value={url}
+      onChange={e => setUrl(e.target.value)}
+      placeholder="https://www.youtube.com/watch?v=VIDEO-CODE"
+    />
+    <StyledRadioGroup>
+      <RadioGroup
+        selectedValue={type}
+        onChange={value => setType(value)}
+        entries={[
+          {label: <i className={classNames('fa', 'fa-fw', 'fa-video')} />, value: 'VIDEO'},
+          {label: <i className={classNames('fa', 'fa-fw', 'fa-music')} />, value: 'AUDIO'}
+        ]}
       />
-    </StyledInput>
+    </StyledRadioGroup>
     <Button type="button" onClick={() => download({url, type})}>Download</Button>
   </StyledContainer>
 )
@@ -39,6 +50,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setUrl: payload => dispatch(setUrl(payload)),
+  setType: payload => dispatch(setType(payload)),
   download: payload => dispatch(download(payload))
 })
 

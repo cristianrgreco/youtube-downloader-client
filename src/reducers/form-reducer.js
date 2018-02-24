@@ -1,4 +1,7 @@
-import {SET_URL} from '../actions/download-form'
+import {
+  SET_URL,
+  SET_TYPE
+} from '../actions/download-form'
 
 const initialState = {
   url: '',
@@ -11,6 +14,11 @@ const formReducer = (state = initialState, action) => {
       return {
         ...state,
         url: action.payload
+      }
+    case SET_TYPE:
+      return {
+        ...state,
+        type: action.payload
       }
     default:
       return state
