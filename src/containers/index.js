@@ -4,7 +4,7 @@ import Logo from '../components/logo'
 import DownloadForm from './download-form'
 
 const StyledLogo = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 `
 
 const StyledContainer = styled.div`
