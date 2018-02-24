@@ -8,5 +8,6 @@ body {
 }
 
 body, input, button {
+  color: #333;
   font-family: 'Arial', sans-serif;
 }

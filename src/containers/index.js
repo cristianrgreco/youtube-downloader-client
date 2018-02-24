@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import DownloadForm from './download-form'
 import {Logo} from '../components'
+import DownloadForm from './download-form'
+import DownloadTable from './download-table'
 
 const StyledLogo = styled.div`
   margin-bottom: 2rem;
@@ -13,12 +14,19 @@ const StyledContainer = styled.div`
   align-items: center;
 `
 
+const StyledDownloadForm = styled.div`
+  margin-bottom: 2rem;
+`
+
 const App = () => (
   <StyledContainer>
     <StyledLogo>
       <Logo />
     </StyledLogo>
-    <DownloadForm />
+    <StyledDownloadForm>
+      <DownloadForm />
+    </StyledDownloadForm>
+    <DownloadTable />
   </StyledContainer>
 )
 
