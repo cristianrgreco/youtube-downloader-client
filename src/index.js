@@ -9,9 +9,18 @@ import theme from './theme'
 import reducers from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 import fontawesome from '@fortawesome/fontawesome'
-import {faVideo, faMusic} from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(faVideo, faMusic)
+import {
+  faVideo,
+  faMusic,
+  faDownload
+} from '@fortawesome/fontawesome-free-solid'
+
+fontawesome.library.add(
+  faVideo,
+  faMusic,
+  faDownload
+)
 
 const store = createStore(
   reducers,

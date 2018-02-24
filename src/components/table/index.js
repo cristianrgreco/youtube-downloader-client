@@ -7,17 +7,17 @@ const StyledContainer = styled.div``
 const StyledHeaders = styled.div`
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid ${props => lighten(.45, props.theme.colours.red)};
-  padding: .25rem 0;
+  border-bottom: 2px solid ${props => lighten(.25, props.theme.colours.grey)};
+  padding: .5rem;
 `
 
 const StyledHeader = styled.span`
-  min-width: 6rem;
-  max-width: 6rem;
+  min-width: ${props => getSize(props.size)};
+  max-width: ${props => getSize(props.size)};
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .25rem;
+  margin: 0 .5rem;
   font-weight: bold;
 `
 
@@ -26,36 +26,55 @@ const StyledRows = styled.div`
 `
 
 const StyledRow = styled.div`
+  font-size: .8rem;
+  align-items: center;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid ${props => lighten(.45, props.theme.colours.red)};
-  padding: .25rem 0;
-  font-size: .8rem;
+  border-bottom: 1px solid ${props => lighten(.25, props.theme.colours.grey)};
+  padding: .5rem;
+  
+  &:last-child {
+    border-bottom: none;
+  }
 `
 
 const StyledCell = styled.div`
-  min-width: 6rem;
-  max-width: 6rem;
+  min-width: ${props => getSize(props.size)};
+  max-width: ${props => getSize(props.size)};
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .25rem;
+  margin: 0 .5rem;
 `
 
 const range = length => new Array(length).fill(0)
+
+const getSize = size => {
+  switch (size) {
+    case 'small':
+      return '2rem'
+    case 'large':
+      return '10rem'
+    default:
+      return '6rem'
+  }
+}
 
 const Table = ({data: {headers, rows}}) => (
   <StyledContainer>
     <StyledHeaders>
       {headers.map((header, i) => (
-        <StyledHeader key={`headerKey-${i}`}>{header.label}</StyledHeader>
+        <StyledHeader
+          key={`headerKey-${i}`}
+          size={header.size}
+        >{header.label}</StyledHeader>
       ))}
     </StyledHeaders>
     <StyledRows>
       {range(rows.length).map((_, i) => (
         <StyledRow key={`key-${i}`}>
           {headers.map((header, j) => (
-            <StyledCell key={`key-${j}`}>
+            <StyledCell key={`key-${j}`} size={header.size}>
               {header.key(rows[i])}
             </StyledCell>
           ))}
