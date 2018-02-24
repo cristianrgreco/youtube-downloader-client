@@ -60,9 +60,10 @@ const StyledInput = styled.input`
 
 const RadioGroup = ({selectedValue, onChange, entries}) => (
   <StyledContainer>
-    {entries.map(({label, value}, i) => (
+    {entries.map(({label, value, title}, i) => (
       <StyledButton
         key={`key-${i}`}
+        title={title}
         onClick={() => onChange(value)}
         className={classNames({first: i === 0, last: i === entries.length - 1})}
       >

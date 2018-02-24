@@ -37,8 +37,16 @@ const DownloadForm = ({url, setUrl, type, setType, download}) => (
         selectedValue={type}
         onChange={value => setType(value)}
         entries={[
-          {label: <FontAwesomeIcon icon={["fas", "video"]} fixedWidth />, value: 'VIDEO'},
-          {label: <FontAwesomeIcon icon={["fas", "music"]} fixedWidth />, value: 'AUDIO'}
+          {
+            label: <FontAwesomeIcon icon={["fas", "video"]} fixedWidth />,
+            value: 'VIDEO',
+            title: 'Video'
+          },
+          {
+            label: <FontAwesomeIcon icon={["fas", "music"]} fixedWidth />,
+            value: 'AUDIO',
+            title: 'Audio'
+          }
         ]}
       />
     </StyledRadioGroup>

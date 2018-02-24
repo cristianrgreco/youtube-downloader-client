@@ -53,7 +53,7 @@ const formatData = rows => ({
     },
     {
       key: row => row.progress,
-      label: 'Status'
+      label: 'Status',
     },
     {
       key: row => row.download,

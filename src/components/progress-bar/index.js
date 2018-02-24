@@ -16,22 +16,23 @@ const StyledContainer = styled.div`
 const StyledProgress = styled.div`
   width: ${props => `${props.value}%`};
   height: ${height};
+  border-radius: ${props => props.theme.borderRadius};
   background-color: ${props => props.theme.colours.red};
 `
 
 const StyledIndeterminateProgress = styled.div`
+  width: 75%;
   height: ${height};
+  border-radius: ${props => props.theme.borderRadius};
   background-color: ${props => props.theme.colours.red};
-  position: absolute;
   animation: indeterminate linear 1s infinite;
+  position: absolute;
   
   @keyframes indeterminate {
     from {
-      width: 0;
       left: -100%;
     }
     to {
-      width: 100%;
       left: 100%;
     }
   }
