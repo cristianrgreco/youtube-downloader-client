@@ -21,7 +21,7 @@ const StyledButton = styled.button`
   ${props => props.small && css`
     font-size: .75rem;
     padding: .2rem .25rem;
-    border-radius: calc(${props => props.theme.borderRadius} / 2);
+    border-radius: calc(${props => props.theme.borderRadius} * .75);
   `}
 
   &:hover {
