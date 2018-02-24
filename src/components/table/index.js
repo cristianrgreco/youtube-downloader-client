@@ -60,6 +60,8 @@ const getSize = size => {
   }
 }
 
+const getCellTitle = value => typeof value === 'string' ? value : null
+
 const Table = ({data: {headers, rows}}) => (
   <StyledContainer>
     <StyledHeaders>
@@ -74,7 +76,11 @@ const Table = ({data: {headers, rows}}) => (
       {range(rows.length).map((_, i) => (
         <StyledRow key={`key-${i}`}>
           {headers.map((header, j) => (
-            <StyledCell key={`key-${j}`} size={header.size}>
+            <StyledCell
+              key={`key-${j}`}
+              size={header.size}
+              title={getCellTitle(header.key(rows[i]))}
+            >
               {header.key(rows[i])}
             </StyledCell>
           ))}

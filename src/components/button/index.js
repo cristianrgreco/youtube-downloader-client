@@ -14,6 +14,7 @@ const StyledButton = styled.button`
   transition: border, background-color ${props => props.theme.transitionSpeed};
   
   ${props => props.secondary && css`
+    border: 1px solid ${props => props.theme.colours.grey};
     background-color: ${props => props.theme.colours.white};
     color: ${props => props.theme.colours.red};
   `}
@@ -29,7 +30,7 @@ const StyledButton = styled.button`
     background-color: ${props => darken(.05, props.theme.colours.red)};  
     
     ${props => props.secondary && css`
-      border: 1px solid ${props => props.theme.colours.red};
+      border: 1px solid ${props => props.theme.colours.grey};
       background-color: ${props => darken(.01, props.theme.colours.white)};
     `}
   }
@@ -39,7 +40,7 @@ const StyledButton = styled.button`
     background-color: ${props => darken(.1, props.theme.colours.red)};  
     
     ${props => props.secondary && css`
-      border: 1px solid ${props => props.theme.colours.red};
+      border: 1px solid ${props => props.theme.colours.grey};
       background-color: ${props => darken(.02, props.theme.colours.white)};
     `}
   }
@@ -50,7 +51,7 @@ const StyledButton = styled.button`
     background-color: ${props => lighten(.45, props.theme.colours.red)};
     
     ${props => props.secondary && css`
-      border: 1px solid ${props => lighten(.45, props.theme.colours.red)};
+      border: 1px solid ${props => lighten(.25, props.theme.colours.grey)};
       background-color: ${props => props.theme.colours.white};
       color: ${props => lighten(.45, props.theme.colours.red)};
     `}
