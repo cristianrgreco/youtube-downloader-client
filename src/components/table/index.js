@@ -8,7 +8,7 @@ const StyledHeaders = styled.div`
   display: flex;
   flex-direction: row;
   border-bottom: 2px solid ${props => lighten(.25, props.theme.colours.grey)};
-  padding: .5rem;
+  padding: .5rem .25rem;
 `
 
 const StyledHeader = styled.span`
@@ -17,7 +17,7 @@ const StyledHeader = styled.span`
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .5rem;
+  margin: 0 .75rem;
   font-weight: bold;
 `
 
@@ -31,7 +31,7 @@ const StyledRow = styled.div`
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid ${props => lighten(.25, props.theme.colours.grey)};
-  padding: .5rem;
+  padding: .5rem .25rem;
   
   &:last-child {
     border-bottom: none;
@@ -44,7 +44,7 @@ const StyledCell = styled.div`
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .5rem;
+  margin: 0 .75rem;
 `
 
 const range = length => new Array(length).fill(0)

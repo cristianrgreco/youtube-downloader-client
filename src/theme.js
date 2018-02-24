@@ -5,7 +5,7 @@ const theme = {
     red: '#D4252C',
     white: '#FFF'
   },
-  borderRadius: '.25rem',
+  borderRadius: '.5rem',
   transitionSpeed: '.2s'
 }
 

@@ -21,7 +21,7 @@ const StyledContainer = styled.div`
 `
 
 const StyledRadioGroup = styled.div`
-  margin: auto .25rem;
+  margin: auto .5rem;
 `
 
 const DownloadForm = ({url, setUrl, type, setType, download}) => (
@@ -50,7 +50,7 @@ const DownloadForm = ({url, setUrl, type, setType, download}) => (
         ]}
       />
     </StyledRadioGroup>
-    <Button type="button" onClick={() => download({url, type})}>Download</Button>
+    <Button onClick={() => download({url, type})}>Download</Button>
   </StyledContainer>
 )
 

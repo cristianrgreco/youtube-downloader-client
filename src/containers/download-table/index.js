@@ -12,10 +12,6 @@ import {
 
 const StyledContainer = styled.div``
 
-const StyledDownloadButtonLabel = styled.span`
-  margin-left: .25em;
-`
-
 const getVideoId = url => queryString.parseUrl(url).query.v
 
 const getType = type => type === 'AUDIO'
@@ -28,9 +24,8 @@ const getProgress = progress => progress === null
 
 const getDownload = downloadUrl => (
   <a type="download" href={downloadUrl}>
-    <Button small disabled={downloadUrl === null}>
+    <Button secondary small disabled={downloadUrl === null}>
       <FontAwesomeIcon icon={["fas", "download"]} fixedWidth />
-      <StyledDownloadButtonLabel>Download</StyledDownloadButtonLabel>
     </Button>
   </a>
 )

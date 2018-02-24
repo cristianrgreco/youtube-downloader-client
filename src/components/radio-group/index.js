@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   font-size: 1rem;
   padding: .25rem .5rem;
-  border: 1px solid ${props => props.theme.colours.grey};
+  border: 1px solid ${props => props.theme.colours.red};
   background-color: ${props => props.theme.colours.white};
   transition: background-color ${props => props.theme.transitionSpeed};
   
