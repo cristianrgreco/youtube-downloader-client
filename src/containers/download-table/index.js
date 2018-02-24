@@ -66,7 +66,9 @@ const formatData = rows => ({
 
 const DownloadTable = ({data}) => (
   <StyledContainer>
-    <Table data={formatData(data)} />
+    {data.length > 0 && (
+      <Table data={formatData(data)} />
+    )}
   </StyledContainer>
 )
 
