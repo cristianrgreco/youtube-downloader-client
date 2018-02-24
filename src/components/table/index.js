@@ -56,7 +56,7 @@ const getSize = size => {
     case 'large':
       return '10rem'
     default:
-      return '6rem'
+      return '5rem'
   }
 }
 

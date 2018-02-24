@@ -52,7 +52,8 @@ const formatData = rows => ({
     },
     {
       key: row => row.download,
-      label: ''
+      label: '',
+      size: 'small'
     }
   ],
   rows: rows.map(row => ({
