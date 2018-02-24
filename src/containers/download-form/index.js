@@ -15,13 +15,24 @@ import {
   download
 } from '../../actions/download-form'
 
+const StyledRadioGroup = styled.div`
+  margin: auto .5rem;
+`
+
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
-
-const StyledRadioGroup = styled.div`
-  margin: auto .5rem;
+  
+  @media (max-width:1000px) {
+    & {
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    ${StyledRadioGroup} {
+      margin: .5rem auto;
+    }
+  }
 `
 
 const DownloadForm = ({url, setUrl, type, setType, download}) => (
