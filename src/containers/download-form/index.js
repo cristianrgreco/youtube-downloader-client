@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {connect} from 'react-redux'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-
 import {Input, Button, RadioGroup} from '../../components'
-
 import {setUrl, setType, download} from '../../actions/download-form'
 
 const StyledRadioGroup = styled.div`

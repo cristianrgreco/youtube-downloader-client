@@ -11,9 +11,7 @@ import theme from './theme'
 import reducers from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 import fontawesome from '@fortawesome/fontawesome'
-
 import {createStore, applyMiddleware, compose} from 'redux'
-
 import {faVideo, faMusic, faDownload} from '@fortawesome/fontawesome-free-solid'
 
 fontawesome.library.add(faVideo, faMusic, faDownload)

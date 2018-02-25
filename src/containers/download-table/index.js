@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import styled from 'styled-components'
 import queryString from 'query-string'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-
 import {Table, Button, ProgressBar} from '../../components'
 
 const StyledContainer = styled.div``
