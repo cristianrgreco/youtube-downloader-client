@@ -5,6 +5,7 @@ import thunk from 'redux-thunk'
 import io from 'socket.io-client'
 import {ThemeProvider} from 'styled-components'
 import './index.css'
+import conf from './conf'
 import App from './containers'
 import theme from './theme'
 import reducers from './reducers'
@@ -29,7 +30,7 @@ fontawesome.library.add(
   faDownload
 )
 
-const socket = io.connect('http://localhost:8080')
+const socket = io.connect(conf.socketUrl)
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
