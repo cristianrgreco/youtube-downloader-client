@@ -18,7 +18,7 @@ const getType = type => type === 'AUDIO'
   ? <FontAwesomeIcon icon={["fas", "music"]} fixedWidth />
   : <FontAwesomeIcon icon={["fas", "video"]} fixedWidth />
 
-const getProgress = progress => progress === null
+const getProgress = (state, progress) => (progress === null || state !== 'DOWNLOADING') && state !== 'COMPLETE'
   ? <ProgressBar indeterminate />
   : <ProgressBar min={0} max={100} value={progress} />
 
@@ -30,7 +30,7 @@ const getDownload = downloadUrl => (
   </a>
 )
 
-const formatData = rows => ({
+const formatData = downloads => ({
   headers: [
     {
       key: row => row.id,
@@ -56,58 +56,25 @@ const formatData = rows => ({
       size: 'small'
     }
   ],
-  rows: rows.map(row => ({
-    ...row,
-    id: getVideoId(row.url),
-    type: getType(row.type),
-    progress: getProgress(row.progress),
-    download: getDownload(row.download)
+  rows: downloads.map(download => ({
+    ...download,
+    id: getVideoId(download.url),
+    type: getType(download.type),
+    progress: getProgress(download.state, download.progress),
+    download: getDownload(download.download)
   }))
 })
 
-const DownloadTable = ({data}) => (
+const DownloadTable = ({downloads}) => (
   <StyledContainer>
-    {data.length > 0 && (
-      <Table data={formatData(data)} />
+    {downloads.length > 0 && (
+      <Table data={formatData(downloads)} />
     )}
   </StyledContainer>
 )
 
 const mapStateToProps = state => ({
-  data: [
-    {
-      url: 'https://www.youtube.com/watch?v=LsoLEjrDogU',
-      name: null,
-      type: 'VIDEO',
-      progress: null,
-      status: 'RESOLVING',
-      download: null
-    },
-    {
-      url: 'https://www.youtube.com/watch?v=pjTj-_55WZ8',
-      name: 'Rudimental - These Days feat. Jess Glynne',
-      type: 'AUDIO',
-      progress: 35.8,
-      status: 'DOWNLOADING',
-      download: null
-    },
-    {
-      url: 'https://www.youtube.com/watch?v=xpVfcZ0ZcFM',
-      name: 'Drake - God’s Plan',
-      type: 'VIDEO',
-      progress: 100,
-      status: 'CONVERTING',
-      download: null
-    },
-    {
-      url: 'https://www.youtube.com/watch?v=XataOVgLvEQ',
-      name: 'Not3s, Mabel - My Lover (Radio Edit) (Official Video)',
-      type: 'AUDIO',
-      progress: 100,
-      status: 'COMPLETE',
-      download: 'https://www.youtube.com/watch?v=XataOVgLvEQ'
-    }
-  ]
+  downloads: state.downloads
 })
 
 export default connect(mapStateToProps)(DownloadTable)

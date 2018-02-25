@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {createStore} from 'redux'
 import {Provider} from 'react-redux'
+import thunk from 'redux-thunk'
+import io from 'socket.io-client'
 import {ThemeProvider} from 'styled-components'
 import './index.css'
 import App from './containers'
@@ -9,6 +10,12 @@ import theme from './theme'
 import reducers from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 import fontawesome from '@fortawesome/fontawesome'
+
+import {
+  createStore,
+  applyMiddleware,
+  compose
+} from 'redux'
 
 import {
   faVideo,
@@ -22,9 +29,17 @@ fontawesome.library.add(
   faDownload
 )
 
+const socket = io.connect('http://localhost:8080')
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 const store = createStore(
   reducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeEnhancers(
+    applyMiddleware(
+      thunk.withExtraArgument({socket})
+    )
+  )
 )
 
 ReactDOM.render(
