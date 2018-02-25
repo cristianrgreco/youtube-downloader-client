@@ -75,11 +75,7 @@ const Table = ({data: {headers, rows}}) => (
       {range(rows.length).map((_, i) => (
         <StyledRow key={`key-${i}`}>
           {headers.map((header, j) => (
-            <StyledCell
-              key={`key-${j}`}
-              size={header.size}
-              title={getCellTitle(header.key(rows[i]))}
-            >
+            <StyledCell key={`key-${j}`} size={header.size} title={getCellTitle(header.key(rows[i]))}>
               {header.key(rows[i])}
             </StyledCell>
           ))}

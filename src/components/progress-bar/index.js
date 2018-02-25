@@ -42,11 +42,7 @@ const percentageComplete = (min, max, value) => value / (max - min) * 100
 
 const ProgressBar = ({min, max, value, indeterminate}) => (
   <StyledContainer>
-    {indeterminate ? (
-      <StyledIndeterminateProgress />
-    ) : (
-      <StyledProgress value={percentageComplete(min, max, value)} />
-    )}
+    {indeterminate ? <StyledIndeterminateProgress /> : <StyledProgress value={percentageComplete(min, max, value)} />}
   </StyledContainer>
 )
 
