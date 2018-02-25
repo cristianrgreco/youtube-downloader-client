@@ -19,7 +19,7 @@ const StyledRadioGroup = styled.div`
   margin: auto .5rem;
 `
 
-const StyledContainer = styled.div`
+const StyledForm = styled.form`
   display: flex;
   flex-direction: row;
   
@@ -36,12 +36,16 @@ const StyledContainer = styled.div`
 `
 
 const DownloadForm = ({url, setUrl, type, setType, download}) => (
-  <StyledContainer>
+  <StyledForm onSubmit={e => {
+    download({url, type})
+    e.preventDefault()
+  }}>
     <Input
       type="text"
       value={url}
       onChange={e => setUrl(e.target.value)}
       placeholder="https://www.youtube.com/watch?v=VIDEO-CODE"
+      required
     />
     <StyledRadioGroup>
       <RadioGroup
@@ -61,8 +65,8 @@ const DownloadForm = ({url, setUrl, type, setType, download}) => (
         ]}
       />
     </StyledRadioGroup>
-    <Button onClick={() => download({url, type})}>Download</Button>
-  </StyledContainer>
+    <Button>Download</Button>
+  </StyledForm>
 )
 
 const mapStateToProps = state => ({
