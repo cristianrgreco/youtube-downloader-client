@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --coverage --env=jsdom",
     "format": "prettier --write 'src/**/*.{js,jsx,json}'",
     "eject": "react-scripts eject"
   },
