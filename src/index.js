@@ -20,7 +20,10 @@ const socket = io.connect(conf.socketUrl)
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunk.withExtraArgument({socket}))))
+const store = createStore(
+  reducers,
+  composeEnhancers(applyMiddleware(thunk.withExtraArgument({socket})))
+)
 
 ReactDOM.render(
   <Provider store={store}>

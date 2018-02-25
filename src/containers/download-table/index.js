@@ -67,7 +67,9 @@ const formatData = downloads => ({
 })
 
 const DownloadTable = ({downloads}) => (
-  <StyledContainer>{downloads.length > 0 && <Table data={formatData(downloads)} />}</StyledContainer>
+  <StyledContainer>
+    {downloads.length > 0 && <Table data={formatData(downloads)} />}
+  </StyledContainer>
 )
 
 const mapStateToProps = state => ({

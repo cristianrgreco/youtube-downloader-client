@@ -1,4 +1,9 @@
-import {DOWNLOAD, TITLE_EVENT, STATE_EVENT, PROGRESS_EVENT} from '../actions/download-form'
+import {
+  DOWNLOAD,
+  TITLE_EVENT,
+  STATE_EVENT,
+  PROGRESS_EVENT
+} from '../actions/download-form'
 
 const initialState = []
 

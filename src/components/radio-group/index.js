@@ -69,7 +69,12 @@ const RadioGroup = ({selectedValue, onChange, entries}) => (
         className={classNames({first: i === 0, last: i === entries.length - 1})}
       >
         <StyledLabel>
-          <StyledInput type="radio" value={value} checked={value === selectedValue} readOnly={true} />
+          <StyledInput
+            type="radio"
+            value={value}
+            checked={value === selectedValue}
+            readOnly={true}
+          />
           <StyledSpan>{label}</StyledSpan>
         </StyledLabel>
       </StyledButton>
