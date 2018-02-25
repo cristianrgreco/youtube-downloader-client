@@ -12,23 +12,11 @@ import reducers from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 import fontawesome from '@fortawesome/fontawesome'
 
-import {
-  createStore,
-  applyMiddleware,
-  compose
-} from 'redux'
+import {createStore, applyMiddleware, compose} from 'redux'
 
-import {
-  faVideo,
-  faMusic,
-  faDownload
-} from '@fortawesome/fontawesome-free-solid'
+import {faVideo, faMusic, faDownload} from '@fortawesome/fontawesome-free-solid'
 
-fontawesome.library.add(
-  faVideo,
-  faMusic,
-  faDownload
-)
+fontawesome.library.add(faVideo, faMusic, faDownload)
 
 const socket = io.connect(conf.socketUrl)
 
@@ -36,11 +24,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
   reducers,
-  composeEnhancers(
-    applyMiddleware(
-      thunk.withExtraArgument({socket})
-    )
-  )
+  composeEnhancers(applyMiddleware(thunk.withExtraArgument({socket})))
 )
 
 ReactDOM.render(

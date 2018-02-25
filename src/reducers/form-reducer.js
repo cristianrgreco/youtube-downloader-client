@@ -1,8 +1,4 @@
-import {
-  SET_URL,
-  SET_TYPE,
-  DOWNLOAD
-} from '../actions/download-form'
+import {SET_URL, SET_TYPE, DOWNLOAD} from '../actions/download-form'
 
 const initialState = {
   url: '',

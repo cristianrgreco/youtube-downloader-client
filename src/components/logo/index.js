@@ -6,6 +6,6 @@ const StyledLogo = styled.img`
   width: 16rem;
 `
 
-const Logo = () => <StyledLogo src={logo} alt="YouTube"/>
+const Logo = () => <StyledLogo src={logo} alt="YouTube" />
 
 export default Logo

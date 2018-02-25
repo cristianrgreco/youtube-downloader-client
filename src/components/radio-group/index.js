@@ -11,28 +11,28 @@ const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   font-size: 1rem;
-  padding: .3rem .4rem .2rem .4rem;
+  padding: 0.3rem 0.4rem 0.2rem 0.4rem;
   border: 1px solid ${props => props.theme.colours.grey};
   background-color: ${props => props.theme.colours.white};
   transition: background-color ${props => props.theme.transitionSpeed};
-  
+
   &:hover {
-    background-color: ${props => darken(.01, props.theme.colours.white)};  
+    background-color: ${props => darken(0.01, props.theme.colours.white)};
   }
 
   &:active {
-    background-color: ${props => darken(.02, props.theme.colours.white)};  
+    background-color: ${props => darken(0.02, props.theme.colours.white)};
   }
-  
+
   &:not(.first) {
     border-left: none;
   }
-  
+
   &.first {
     border-top-left-radius: ${props => props.theme.borderRadius};
     border-bottom-left-radius: ${props => props.theme.borderRadius};
   }
-  
+
   &.last {
     border-top-right-radius: ${props => props.theme.borderRadius};
     border-bottom-right-radius: ${props => props.theme.borderRadius};
@@ -46,13 +46,13 @@ const StyledLabel = styled.label`
 
 const StyledSpan = styled.span`
   cursor: pointer;
-  color: ${props => lighten(.45, props.theme.colours.red)};
+  color: ${props => lighten(0.45, props.theme.colours.red)};
   transition: color ${props => props.theme.transitionSpeed};
 `
 
 const StyledInput = styled.input`
   display: none;
-  
+
   &:checked + ${StyledSpan} {
     color: ${props => props.theme.colours.red};
   }

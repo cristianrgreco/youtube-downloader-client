@@ -8,7 +8,7 @@ const StyledContainer = styled.div`
   width: 100%;
   height: ${height};
   border-radius: ${props => props.theme.borderRadius};
-  background-color: ${props => lighten(.25, props.theme.colours.grey)};
+  background-color: ${props => lighten(0.25, props.theme.colours.grey)};
   position: relative;
   overflow: hidden;
 `
@@ -27,7 +27,7 @@ const StyledIndeterminateProgress = styled.div`
   background-color: ${props => props.theme.colours.red};
   animation: indeterminate linear 1s infinite;
   position: absolute;
-  
+
   @keyframes indeterminate {
     from {
       left: -100%;
@@ -38,7 +38,7 @@ const StyledIndeterminateProgress = styled.div`
   }
 `
 
-const percentageComplete = (min, max, value) => (value / (max - min)) * 100
+const percentageComplete = (min, max, value) => value / (max - min) * 100
 
 const ProgressBar = ({min, max, value, indeterminate}) => (
   <StyledContainer>

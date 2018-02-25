@@ -5,11 +5,4 @@ import Button from './button'
 import RadioGroup from './radio-group'
 import ProgressBar from './progress-bar'
 
-export {
-  Logo,
-  Input,
-  Table,
-  Button,
-  RadioGroup,
-  ProgressBar
-}
+export {Logo, Input, Table, Button, RadioGroup, ProgressBar}

@@ -3,43 +3,37 @@ import styled from 'styled-components'
 import {connect} from 'react-redux'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 
-import {
-  Input,
-  Button,
-  RadioGroup
-} from '../../components'
+import {Input, Button, RadioGroup} from '../../components'
 
-import {
-  setUrl,
-  setType,
-  download
-} from '../../actions/download-form'
+import {setUrl, setType, download} from '../../actions/download-form'
 
 const StyledRadioGroup = styled.div`
-  margin: auto .5rem;
+  margin: auto 0.5rem;
 `
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: row;
-  
-  @media (max-width:1000px) {
+
+  @media (max-width: 1000px) {
     & {
       align-items: center;
       flex-direction: column;
     }
-    
+
     ${StyledRadioGroup} {
-      margin: .5rem auto;
+      margin: 0.5rem auto;
     }
   }
 `
 
 const DownloadForm = ({url, setUrl, type, setType, download}) => (
-  <StyledForm onSubmit={e => {
-    download({url, type})
-    e.preventDefault()
-  }}>
+  <StyledForm
+    onSubmit={e => {
+      download({url, type})
+      e.preventDefault()
+    }}
+  >
     <Input
       type="text"
       value={url}
@@ -53,12 +47,12 @@ const DownloadForm = ({url, setUrl, type, setType, download}) => (
         onChange={value => setType(value)}
         entries={[
           {
-            label: <FontAwesomeIcon icon={["fas", "video"]} fixedWidth />,
+            label: <FontAwesomeIcon icon={['fas', 'video']} fixedWidth />,
             value: 'VIDEO',
             title: 'Video'
           },
           {
-            label: <FontAwesomeIcon icon={["fas", "music"]} fixedWidth />,
+            label: <FontAwesomeIcon icon={['fas', 'music']} fixedWidth />,
             value: 'AUDIO',
             title: 'Audio'
           }

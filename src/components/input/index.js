@@ -6,19 +6,19 @@ const StyledInput = styled.input`
   outline: none;
   color: ${props => props.theme.colours.black};
   font-size: 1rem;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border-radius: ${props => props.theme.borderRadius};
   border: 1px solid ${props => props.theme.colours.grey};
   transition: border ${props => props.theme.transitionSpeed};
- 
+
   &::placeholder {
     color: ${props => props.theme.colours.grey};
-    transition: color ${props => props.theme.transitionSpeed}
-  } 
-  
+    transition: color ${props => props.theme.transitionSpeed};
+  }
+
   &:focus {
     &::placeholder {
-      color: ${props => lighten(.25, props.theme.colours.grey)};
+      color: ${props => lighten(0.25, props.theme.colours.grey)};
     }
   }
 `

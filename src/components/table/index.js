@@ -7,8 +7,8 @@ const StyledContainer = styled.div``
 const StyledHeaders = styled.div`
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid ${props => lighten(.25, props.theme.colours.grey)};
-  padding: .5rem .25rem;
+  border-bottom: 2px solid ${props => lighten(0.25, props.theme.colours.grey)};
+  padding: 0.5rem 0.25rem;
 `
 
 const StyledHeader = styled.span`
@@ -17,7 +17,7 @@ const StyledHeader = styled.span`
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .75rem;
+  margin: 0 0.75rem;
   font-weight: bold;
 `
 
@@ -26,13 +26,13 @@ const StyledRows = styled.div`
 `
 
 const StyledRow = styled.div`
-  font-size: .8rem;
+  font-size: 0.8rem;
   align-items: center;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid ${props => lighten(.25, props.theme.colours.grey)};
-  padding: .5rem .25rem;
-  
+  border-bottom: 1px solid ${props => lighten(0.25, props.theme.colours.grey)};
+  padding: 0.5rem 0.25rem;
+
   &:last-child {
     border-bottom: none;
   }
@@ -44,7 +44,7 @@ const StyledCell = styled.div`
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  margin: 0 .75rem;
+  margin: 0 0.75rem;
 `
 
 const range = length => new Array(length).fill(0)
@@ -60,16 +60,15 @@ const getSize = size => {
   }
 }
 
-const getCellTitle = value => typeof value === 'string' ? value : null
+const getCellTitle = value => (typeof value === 'string' ? value : null)
 
 const Table = ({data: {headers, rows}}) => (
   <StyledContainer>
     <StyledHeaders>
       {headers.map((header, i) => (
-        <StyledHeader
-          key={`headerKey-${i}`}
-          size={header.size}
-        >{header.label}</StyledHeader>
+        <StyledHeader key={`headerKey-${i}`} size={header.size}>
+          {header.label}
+        </StyledHeader>
       ))}
     </StyledHeaders>
     <StyledRows>

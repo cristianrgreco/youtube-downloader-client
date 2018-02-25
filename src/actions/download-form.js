@@ -32,7 +32,7 @@ const progressEvent = (percentageComplete, {url, type}) => ({
 
 const getPercentageComplete = progress => {
   if (progress.percentageComplete === null) {
-    return null;
+    return null
   }
   return Number(progress.percentageComplete.match(/[0-9.]+/).pop())
 }
@@ -46,13 +46,13 @@ export const download = ({url, type}) => (dispatch, getState, {socket}) => {
     switch (data.type) {
       case 'TITLE':
         dispatch(titleEvent(data.payload, {url, type}))
-        break;
+        break
       case 'STATE':
         dispatch(stateEvent(data.payload.text, {url, type}))
-        break;
+        break
       case 'PROGRESS': {
         dispatch(progressEvent(getPercentageComplete(data.payload), {url, type}))
-        break;
+        break
       }
     }
   })
