@@ -50,10 +50,11 @@ export const download = ({url, type}) => (dispatch, getState, {socket}) => {
       case 'STATE':
         dispatch(stateEvent(data.payload.text, {url, type}))
         break
-      case 'PROGRESS': {
+      case 'PROGRESS':
         dispatch(progressEvent(getPercentageComplete(data.payload), {url, type}))
         break
-      }
+      default:
+        break
     }
   })
 
