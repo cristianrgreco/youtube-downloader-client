@@ -65,6 +65,7 @@ const RadioGroup = ({selectedValue, onChange, entries}) => (
         key={`key-${i}`}
         title={title}
         onClick={() => onChange(value)}
+        type="button"
         className={classNames({first: i === 0, last: i === entries.length - 1})}
       >
         <StyledLabel>
