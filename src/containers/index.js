@@ -1,8 +1,41 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, {injectGlobal} from 'styled-components'
 import {Logo} from '../components'
 import DownloadForm from './download-form'
 import DownloadTable from './download-table'
+
+injectGlobal`
+  html {
+    font-size: 26px;
+    min-width: 320px;
+    
+    @media (max-width: 700px) {
+      font-size: 22px;
+    }
+    
+    @media (max-width: 600px) {
+      font-size: 18px;
+    }
+    
+    @media (max-width: 500px) {
+      font-size: 14px;
+    }
+    
+    @media (max-width: 400px) {
+      font-size: 12px;
+    }
+  }
+  
+  body {
+    margin: 2rem;
+    padding: 0;
+  }
+  
+  body, input, button {
+    color: #111;
+    font-family: Arial, sans-serif;
+  }
+`
 
 const StyledLogo = styled.div`
   margin-bottom: 2rem;

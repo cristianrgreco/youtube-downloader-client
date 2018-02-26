@@ -13,11 +13,9 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: row;
 
-  @media (max-width: 1000px) {
-    & {
-      align-items: center;
-      flex-direction: column;
-    }
+  @media (max-width: 900px) {
+    align-items: center;
+    flex-direction: column;
 
     ${StyledRadioGroup} {
       margin: 0.5rem auto;

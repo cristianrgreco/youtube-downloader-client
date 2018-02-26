@@ -12,6 +12,7 @@ const StyledHeaders = styled.div`
 `
 
 const StyledHeader = styled.span`
+  font-size: 1rem;
   min-width: ${props => getSize(props.size)};
   max-width: ${props => getSize(props.size)};
   overflow-x: hidden;
@@ -19,6 +20,13 @@ const StyledHeader = styled.span`
   white-space: nowrap;
   margin: 0 0.75rem;
   font-weight: bold;
+  
+  @media (max-width: 900px) {
+    min-width: ${props => getSmallSize(props.size)};
+    max-width: ${props => getSmallSize(props.size)};
+    font-size: 0.8rem;
+    margin: 0 0.5rem;
+  }
 `
 
 const StyledRows = styled.div`
@@ -26,7 +34,6 @@ const StyledRows = styled.div`
 `
 
 const StyledRow = styled.div`
-  font-size: 0.8rem;
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -39,12 +46,20 @@ const StyledRow = styled.div`
 `
 
 const StyledCell = styled.div`
+  font-size: 0.8rem;
   min-width: ${props => getSize(props.size)};
   max-width: ${props => getSize(props.size)};
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 0 0.75rem;
+  
+  @media (max-width: 900px) {
+    min-width: ${props => getSmallSize(props.size)};
+    max-width: ${props => getSmallSize(props.size)};
+    font-size: 0.6rem;
+    margin: 0 0.5rem;
+  }
 `
 
 const range = length => new Array(length).fill(0)
@@ -57,6 +72,17 @@ const getSize = size => {
       return '10rem'
     default:
       return '5rem'
+  }
+}
+
+const getSmallSize = size => {
+  switch (size) {
+    case 'small':
+      return '2rem'
+    case 'large':
+      return '8rem'
+    default:
+      return '4rem'
   }
 }
 
