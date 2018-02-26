@@ -9,19 +9,19 @@ injectGlobal`
     font-size: 26px;
     min-width: 320px;
     
-    @media (max-width: 700px) {
+    @media (max-width: 670px) {
       font-size: 22px;
     }
     
-    @media (max-width: 600px) {
+    @media (max-width: 570px) {
       font-size: 18px;
     }
     
-    @media (max-width: 500px) {
+    @media (max-width: 470px) {
       font-size: 14px;
     }
     
-    @media (max-width: 400px) {
+    @media (max-width: 370px) {
       font-size: 12px;
     }
   }
