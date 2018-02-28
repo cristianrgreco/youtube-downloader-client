@@ -20,7 +20,7 @@ const StyledHeader = styled.span`
   white-space: nowrap;
   margin: 0 0.75rem;
   font-weight: bold;
-  
+
   @media (max-width: 900px) {
     min-width: ${props => getSmallSize(props.size)};
     max-width: ${props => getSmallSize(props.size)};
@@ -53,7 +53,7 @@ const StyledCell = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 0 0.75rem;
-  
+
   @media (max-width: 900px) {
     min-width: ${props => getSmallSize(props.size)};
     max-width: ${props => getSmallSize(props.size)};
