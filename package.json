@@ -32,6 +32,9 @@
     "prettier": "^1.10.2"
   },
   "lint-staged": {
-    "*.js": ["yarn format", "git add"]
+    "*.js": [
+      "yarn format",
+      "git add"
+    ]
   }
 }
