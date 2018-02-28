@@ -43,12 +43,8 @@ describe('downloadForm', () => {
     expect(mockDispatch.mock.calls).toEqual([
       [{type: 'TITLE_EVENT', payload: {title: 'title', url, type}}],
       [{type: 'STATE_EVENT', payload: {state: 'stateText', url, type}}],
-      [
-        {type: 'PROGRESS_EVENT', payload: {percentageComplete: null, url, type}}
-      ],
-      [
-        {type: 'PROGRESS_EVENT', payload: {percentageComplete: 50.5, url, type}}
-      ],
+      [{type: 'PROGRESS_EVENT', payload: {percentage: null, url, type}}],
+      [{type: 'PROGRESS_EVENT', payload: {percentage: 50.5, url, type}}],
       [{type: 'DOWNLOAD', payload: {url, type}}]
     ])
   })

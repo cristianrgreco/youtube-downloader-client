@@ -60,12 +60,12 @@ const downloadsReducer = (state = initialState, action) => {
 
     case PROGRESS_EVENT:
       return state.map(download => {
-        const {url, type, percentageComplete} = action.payload
+        const {url, type, percentage} = action.payload
 
         if (download.url === url && download.type === type) {
           return {
             ...download,
-            progress: percentageComplete
+            progress: percentage
           }
         } else {
           return download

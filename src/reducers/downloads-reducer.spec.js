@@ -93,7 +93,7 @@ describe('downloadsReducer', () => {
     ]
     const action = {
       type: PROGRESS_EVENT,
-      payload: {url: 'url-1', type: 'type-1', percentageComplete: 50}
+      payload: {url: 'url-1', type: 'type-1', percentage: 50}
     }
 
     const nextState = reducer(state, action)

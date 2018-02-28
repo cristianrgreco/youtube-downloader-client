@@ -25,12 +25,12 @@ const stateEvent = (state, {url, type}) => ({
   payload: {state, url, type}
 })
 
-const progressEvent = (percentageComplete, {url, type}) => ({
+const progressEvent = (percentage, {url, type}) => ({
   type: PROGRESS_EVENT,
-  payload: {percentageComplete, url, type}
+  payload: {percentage, url, type}
 })
 
-const getPercentageComplete = progress => {
+const getPercentage = progress => {
   if (progress.percentageComplete === null) {
     return null
   }
@@ -51,9 +51,7 @@ export const download = ({url, type}) => (dispatch, getState, {socket}) => {
         dispatch(stateEvent(data.payload.text, {url, type}))
         break
       case 'PROGRESS':
-        dispatch(
-          progressEvent(getPercentageComplete(data.payload), {url, type})
-        )
+        dispatch(progressEvent(getPercentage(data.payload), {url, type}))
         break
       default:
         break
